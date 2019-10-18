@@ -1,194 +1,228 @@
 {
-	"nodes": [{
-			"name": "Alle",
-			"group": 1,
-			"x": 750,
-			"y": 20,
-			"fixed": true,
-			"nodecol": "#0F9D58",
-			"list": [{
-				"accession": " "
-			}]
-		},
+	"nodes": [
 		{
+			"id": "id_Gene",
 			"name": "Gene",
 			"group": 1,
-			"x": 750,
-			"y": 130,
+			"x": 330,
+			"y": 50,
 			"fixed": true,
 			"nodecol": "#0F9D58",
-			"list": [{
-					"accession": "Name"
-				},
-				{
-					"accession": "Cromosom"
+			"list": {
+				"schema": {
+					"Gene": {
+						"type": "object",
+						"title": "Gene",
+						"properties": {
+					"Gene_Id": {
+						"type": "string",
+						"title": "Gene_Id"
+					  }
 				}
-			]
+			}
+		}
+	}
 		},
-		{
+		{	
+			"id": "id_Protein",
 			"name": "Protein",
 			"group": 1,
-			"x": 750,
-			"y": 240,
+			"x": 330,
+			"y": 150,
 			"fixed": true,
 			"nodecol": "#0F9D58",
-			"list": [{
-					"accession": "UniProtKB Accession"
-				},
-				{
-					"accession": "RefSeq Accession"
-				},
-				{
-					"accession": "Name"
+			"list": {
+				"schema": {
+					"Protein": {
+						"type": "object",
+						"title": "Protein",
+						"properties": {
+					"UniProtKB Accession": {
+						"type": "string",
+						"title": "UniProtKB Accession"
+					  },
+					  "RefSeq Accession": {
+						"type": "string",
+						"title": "RefSeq Accession"
+					  },
+					  "Monoisotopic Mass": {
+						"type": "object",
+						"title": "Chemical Mass",
+						"properties": {
+						  "Min": {
+							"type": "string",
+							"title": "Min"
+						  },
+						  "Max": {
+							"type": "string",
+							"title": "Max"
+						  }
+						}
+					  },
+					  "Protein Name": {
+						"type": "string",
+						"title": "Protein Name"
+					  }
 				}
-			]
+			}
+		}
+	}
+			
 		},
 		{
+			"id": "id_Enzyme",
 			"name": "Enzyme",
 			"group": 1,
-			"x": 750,
-			"y": 350,
-			"fixed": true,
-			"nodecol": "#0F9D58",
-			"list": [{
-				"accession": " "
-			}]
-		},
-		{
-			"name": "Glycosylhydrolase",
-			"group": 1,
-			"x": 600,
-			"y": 440,
-			"fixed": true,
-			"nodecol": "#0F9D58",
-			"list": [{
-				"accession": " "
-			}]
-		},
-		{
-			"name": "Glycosyltransfearse",
-			"group": 1,
-			"x": 900,
-			"y": 440,
-			"fixed": true,
-			"nodecol": "#0F9D58",
-			"list": [{
-				"accession": " "
-			}]
-		},
-		{
-			"name": "Residue",
-			"group": 1,
-			"x": 750,
-			"y": 540,
-			"fixed": true,
-			"nodecol": "#0F9D58",
-			"list": [{
-				"accession": " "
-			}]
-		},
-		{
-			"name": "Glycoprotein",
-			"group": 1,
-			"x": 480,
-			"y": 360,
-			"fixed": true,
-			"nodecol": "#0F9D58",
-			"list": [{
-					"accession": "Glycosylated Amino Acid"
-				},
-				{
-					"accession": "Glycosylation Evidence Type"
-				}
-
-			]
-		},
-		{
-			"name": "Glycan",
-			"group": 1,
-			"x": 150,
-			"y": 540,
-			"fixed": true,
-			"nodecol": "#0F9D58",
-			"list": [{
-					"accession": "GlyTouCan Accession"
-				},
-				{
-					"accession": "Monoisotopic Mass"
-				},
-				{
-					"accession": "Glycan Type"
-				},
-				{
-					"accession": "Glycan Motif"
-				}
-			]
-		},
-		{
-			"name": "Organism",
-			"group": 1,
-			"x": 150,
-			"y": 140,
-			"fixed": true,
-			"nodecol": "#0F9D58",
-			"list": [{
-					"accession": "Name"
-				},
-				{
-					"accession": "NCBI Taxonomy ID"
-				}
-
-			]
-		},
-		{
-			"name": "Context",
-			"group": 1,
-			"x": 480,
-			"y": 80,
-			"fixed": true,
-			"nodecol": "#0F9D58",
-			"list": [{
-				"accession": " "
-			}]
-		},
-		{
-			"name": "Expression",
-			"group": 1,
-			"x": 480,
+			"x": 610,
 			"y": 250,
 			"fixed": true,
 			"nodecol": "#0F9D58",
-			"list": [{
-				"accession": " "
-			}]
+			"list": {
+				"schema": {
+					"Biosynthetic Enzyme": {
+						"type": "string",
+						"title": "Biosynthetic Enzyme"
+					  }
+				}
+			}
 		},
 		{
-			"name": "Glycan-Bindser",
+			"id": "id_GlycoProtein",
+			"name": "Glycoprotein",
 			"group": 1,
-			"x": 300,
-			"y": 200,
+			"x": 330,
+			"y": 250,
 			"fixed": true,
 			"nodecol": "#0F9D58",
-			"list": [{
-				"accession": " "
-			}]
+			"list": {
+				"schema": {
+					"Glycoylated Amino Acid": {
+					"type": "string",
+					"title": "Glycoylated Amino Acid",
+					"enum": [
+					  "Type1",
+					  "Type2",
+					  "Type3"
+					]
+				  },
+				  "Glycosylation Evidence Type": {
+					"type": "string",
+					"title": "Glycosylation Evidence Type",
+					"enum": [
+					  "1",
+					  "2",
+					  "3"
+					]
+				  }
+				}
+			}
 		},
 		{
-			"name": "Binding Interaction",
+			"id": "id_Glycan",
+			"name": "Glycan",
 			"group": 1,
-			"x": 300,
-			"y": 360,
+			"x": 50,
+			"y": 250,
 			"fixed": true,
 			"nodecol": "#0F9D58",
-			"list": [{
-				"accession": " "
-			}]
+			"list": {
+				"schema": {
+				  "Glycan": {
+					"type": "object",
+					"title": "Glycan",
+					"properties": {
+					  "GlyTouCan Accession": {
+						"type": "string",
+						"title": " GlyTouCan Accession"
+					  },
+					  "Monoisotopic Mass": {
+						"type": "object",
+						"title": "Monoisotopic Mass",
+						"properties": {
+						  "Min": {
+							"type": "string",
+							"title": "Min"
+						  },
+						  "Max": {
+							"type": "string",
+							"title": "Max"
+						  }
+						}
+					  },
+					  "Number of Sugars": {
+						"type": "object",
+						"title": "Number of Sugars",
+						"properties": {
+						  "Min": {
+							"type": "string",
+							"title": "Min"
+						  },
+						  "Max": {
+							"type": "string",
+							"title": "Max"
+						  }
+						}
+					  },
+					  "Glycan Type": {
+						"type": "string",
+						"title": "Glycan Type",
+						"enum": [
+						  "Type1",
+						  "Type2",
+						  "Type3"
+						]
+					  },
+					  "Glycan Motif": {
+						"type": "string",
+						"title": "Glycan Motif"
+					  }
+					}
+				  }
+				}
+			  }
 		},
-
+		{
+			"id": "id_Organism",
+			"name": "Organism",
+			"group": 1,
+			"x": 50,
+			"y": 150,
+			"fixed": true,
+			"nodecol": "#0F9D58",
+			"list": {
+				"schema": {"Organism": {
+					"type": "string",
+					"title": "Species",
+					"enum": [
+					  "Species1",
+					  "Species2",
+					  "Species3"
+					]
+				  }
+				}
+			}
+		},
+		{
+			"id": "id_Pathway",
+			"name": "Pathway",
+			"group": 1,
+			"x": 610,
+			"y": 150,
+			"fixed": true,
+			"nodecol": "#0F9D58",
+			"list": {
+				"schema": {
+					"Pathway_Id": {
+						"type": "string",
+						"title": "Pathway_Id"
+					  }
+				}
+			}
+		},
 		{
 			"name": "",
 			"group": 2,
-			"x": 480,
+			"x": 400,
 			"y": 500,
 			"fixed": true,
 			"nodecol": "#ffffff00"
@@ -203,166 +237,53 @@
 		}
 	],
 	"links": [{
-			"source": 0,
-			"target": 10,
+			"source": "id_Protein",
+			"target": "id_Organism",
 			"value": 6,
-			"group": 1,
+			"group": 3,
 			"linkName": "has"
 		},
 		{
-			"source": 1,
-			"target": 0,
-			"value": 6,
-			"group": 1,
-			"linkName": "has"
+			"source": "id_Enzyme",
+			"target": "id_Protein",
+			"value": 10,
+			"group": 3,
+			"linkName": "is-a"
 		},
 		{
-			"source": 1,
-			"target": 2,
-			"value": 6,
-			"group": 1,
+			"source": "id_GlycoProtein",
+			"target": "id_Glycan",
+			"value": 10,
+			"group": 3,
+			"linkName": "contains"
+		},
+		{
+			"source": "id_GlycoProtein",
+			"target": "id_Protein",
+			"value": 10,
+			"group": 3,
+			"linkName": "is-a"
+		},
+		{
+			"source": "id_Gene",
+			"target": "id_Protein",
+			"value": 10,
+			"group": 3,
 			"linkName": "encodes"
 		},
 		{
-			"source": 1,
-			"target": 9,
-			"value": 6,
-			"group": 1,
+			"source": "id_Protein",
+			"target": "id_Pathway",
+			"value": 10,
+			"group": 3,
+			"linkName": "has"
+		},
+		{
+			"source": "id_Glycan",
+			"target": "id_Organism",
+			"value": 10,
+			"group": 3,
 			"linkName": "is-in"
-		},
-		{
-			"source": 1,
-			"target": 11,
-			"value": 6,
-			"group": 1,
-			"linkName": "has"
-		},
-		{
-			"source": 2,
-			"target": 11,
-			"value": 6,
-			"group": 1,
-			"linkName": "has"
-		},
-		{
-			"source": 3,
-			"target": 2,
-			"value": 6,
-			"group": 1,
-			"linkName": "is-a"
-		},
-		{
-			"source": 4,
-			"target": 3,
-			"value": 6,
-			"group": 1,
-			"linkName": "is-a"
-		},
-		{
-			"source": 5,
-			"target": 3,
-			"value": 6,
-			"group": 1,
-			"linkName": "is-a"
-		},
-		{
-			"source": 4,
-			"target": 6,
-			"value": 6,
-			"group": 1,
-			"linkName": "cleaves"
-		},
-		{
-			"source": 5,
-			"target": 6,
-			"value": 6,
-			"group": 1,
-			"linkName": "adds"
-		},
-		{
-			"source": 8,
-			"target": 6,
-			"value": 6,
-			"group": 1,
-			"linkName": "contains"
-		},
-		{
-			"source": 8,
-			"target": 9,
-			"value": 6,
-			"group": 1,
-			"linkName": "is-in"
-		},
-		{
-			"source": 7,
-			"target": 14,
-			"value": 6,
-			"group": 1,
-			"linkName": "contains"
-		},
-		{
-			"source": 14,
-			"target": 8,
-			"value": 6,
-			"group": 1,
-			"linkName": ""
-		},
-		{
-			"source": 7,
-			"target": 2,
-			"value": 6,
-			"group": 1,
-			"linkName": "is-a"
-		},
-		{
-			"source": 7,
-			"target": 11,
-			"value": 6,
-			"group": 1,
-			"linkName": "has"
-		},
-		{
-			"source": 7,
-			"target": 13,
-			"value": 6,
-			"group": 1,
-			"linkName": "has"
-		},
-		{
-			"source": 12,
-			"target": 13,
-			"value": 6,
-			"group": 1,
-			"linkName": "has"
-		},
-		{
-			"source": 8,
-			"target": 15,
-			"value": 6,
-			"group": 1,
-			"linkName": "has"
-		},
-		{
-			"source": 15,
-			"target": 11,
-			"value": 6,
-			"group": 1,
-			"linkName": ""
-		},
-		{
-			"source": 11,
-			"target": 10,
-			"value": 6,
-			"group": 1,
-			"linkName": "has"
-		},
-		{
-			"source": 8,
-			"target": 13,
-			"value": 6,
-			"group": 1,
-			"linkName": "has"
 		}
-
-	]  
+	]
   }
