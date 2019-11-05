@@ -33,33 +33,33 @@
 			"nodecol": "#0F9D58",
 			"list": {
 				"schema": {
-					"Protein": {
+					"protein_query": {
 						"type": "object",
 						"title": "Protein",
 						"properties": {
-					"UniProtKB Accession": {
+					"uniprot_canonical_ac": {
 						"type": "string",
 						"title": "UniProtKB Accession"
 					  },
-					  "RefSeq Accession": {
+					  "refseq_ac": {
 						"type": "string",
 						"title": "RefSeq Accession"
 					  },
-					  "Monoisotopic Mass": {
+					  "mass": {
 						"type": "object",
-						"title": "Chemical Mass",
+						"title": "Monoisotopic Mass",
 						"properties": {
-						  "Min": {
-							"type": "string",
+						  "min": {
+							"type": "integer",
 							"title": "Min"
 						  },
-						  "Max": {
-							"type": "string",
+						  "max": {
+							"type": "integer",
 							"title": "Max"
 						  }
 						}
 					  },
-					  "Protein Name": {
+					  "protein_name": {
 						"type": "string",
 						"title": "Protein Name"
 					  }
@@ -127,38 +127,38 @@
 			"nodecol": "#0F9D58",
 			"list": {
 				"schema": {
-				  "Glycan": {
+				  "glycan_query": {
 					"type": "object",
 					"title": "Glycan",
 					"properties": {
-					  "GlyTouCan Accession": {
+					  "glytoucan_ac": {
 						"type": "string",
 						"title": " GlyTouCan Accession"
 					  },
-					  "Monoisotopic Mass": {
+					  "mass": {
 						"type": "object",
 						"title": "Monoisotopic Mass",
 						"properties": {
-						  "Min": {
-							"type": "string",
+						  "min": {
+							"type": "integer",
 							"title": "Min"
 						  },
-						  "Max": {
-							"type": "string",
+						  "max": {
+							"type": "integer",
 							"title": "Max"
 						  }
 						}
 					  },
-					  "Number of Sugars": {
+					  "number_monosaccharides": {
 						"type": "object",
 						"title": "Number of Sugars",
 						"properties": {
 						  "Min": {
-							"type": "string",
+							"type": "integer",
 							"title": "Min"
 						  },
 						  "Max": {
-							"type": "string",
+							"type": "integer",
 							"title": "Max"
 						  }
 						}
@@ -167,12 +167,12 @@
 						"type": "string",
 						"title": "Glycan Type",
 						"enum": [
-						  "Type1",
-						  "Type2",
-						  "Type3"
+						  "N-Glycan",
+						  "O-Glycan",
+						  "Other"
 						]
 					  },
-					  "Glycan Motif": {
+					  "glycan_motif": {
 						"type": "string",
 						"title": "Glycan Motif"
 					  }
