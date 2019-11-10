@@ -5,7 +5,7 @@ var global_var = [];
 //This is the main ajax which loads data.json
     $.ajax({
                dataType: "json",
-               url: 'data.json',
+               url: 'https://raw.githack.com/ReneRanzinger/GlyGen-Advance-Search-widget/master/src/data.json',
                async:false,
                success: processData
 
@@ -426,18 +426,26 @@ links.forEach(function(e) {
         cq_complexQuery(val);
       }
 
-      var complexQuery;
 
+      var query_list = new Array();
+ 
+      var complexQuery={ 
+        "complex_query":{ 
+           "operator":"AND",
+           query_list
+             },
+        "result_type":"protein_list"
+          };
+        
+     
 
 
       function cq_complexQuery(query){
-       
-       
-        if(complexQuery==undefined){
-          complexQuery = query;
-        }
-        else{
-          complexQuery = Object.assign(complexQuery,query);
-        }
-        console.log(JSON.stringify(complexQuery));
+          
+
+          
+          query_list.push(query);
+          console.log(JSON.stringify(complexQuery));
+          
+        
       }
