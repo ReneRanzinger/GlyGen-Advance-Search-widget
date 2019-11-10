@@ -5,7 +5,7 @@ var global_var = [];
 //This is the main ajax which loads data.json
     $.ajax({
                dataType: "json",
-               url: 'https://raw.githack.com/ReneRanzinger/GlyGen-Advance-Search-widget/master/src/data.json',
+               url: '//raw.githack.com/ReneRanzinger/GlyGen-Advance-Search-widget/master/src/data.json',
                async:false,
                success: processData
 
