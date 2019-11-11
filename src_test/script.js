@@ -1,9 +1,11 @@
+htmlDivs();//call the function to build both the divs
+
 
 var global_var = [];
 //This is the main ajax which loads data.json
     $.ajax({
                dataType: "json",
-               url: 'data.json',
+               url: '//raw.githack.com/ReneRanzinger/GlyGen-Advance-Search-widget/master/src/data.json',
                async:false,
                success: processData
 
@@ -109,16 +111,16 @@ links.forEach(function(e) {
         $("#contents").load('form');
         var createdForm = d.list;
         var schema = createdForm.schema;
-        //console.log(createdForm);
+        console.log(createdForm);
         $('form').jsonForm({
-          schema , onSubmit: function (errors, values) {
-          if (errors) {
-            $('#res').html('<p>Er}ror</p>');
-          } else {
-            console.log(values);
-            
-          }
-        }});
+            schema, onSubmit: function(error,values){
+              if(values){
+               formSubmit(values);
+
+              }
+            },formSubmit  //formSubmit Function is called  
+        
+        });
        
         //
        
@@ -363,9 +365,87 @@ links.forEach(function(e) {
       }
 
 
+
+      function htmlDivs(){
+        document.write("<div id= \"first\">");
+        document.write("<svg id=\"mapSVG\"  viewbox=\"0 0 800 350\"></svg>");
+        document.write("</div>");
+        
+        
+        
+        document.write("<div id=\"contents\" class = \"gf-content-div\">");
+        document.write(" <h3><center>Click on a node to get its properties</center><br></h3>");
+        document.write(" <label><center>Contents of node: </center></label>");
+        document.write("<p><span id='display'></span></p>");
+        document.write(" <form id = \"queryForm\">")
+        document.write("</form><br/>");
+        document.write(" <p><span id='display2'></span></p>");
+        document.write("</div>");
+        
+        }
+
       function init() {
         svg.attr('height','100%');
         svg.attr('width','100%');
         // initialisation stuff here
       }
       
+
+
+
+
+
+
+      function formSubmit(values){
+        var val = JSON.stringify(values);
+        
+        val = JSON.parse(val);
+        
+         var resultVal = Object.keys(val)[0];
+            //get the result val name from data.json
+            if(resultVal == "protein_query"){
+              cq_protein(val);
+            }
+
+
+            else if(resultVal == "glycan_query"){
+              cq_glycan(val);
+            }
+      }
+
+
+      
+      function cq_protein(val){
+        //make sure here val["name"] is same as in function from submit
+        Object.assign(val["protein_query"], {operation: "AND","query_type": "search_protein"});
+        cq_complexQuery(val);
+      }
+
+      function cq_glycan(val){
+        Object.assign(val["glycan_query"], {operation: "AND","query_type": "search_glycan"});
+        cq_complexQuery(val);
+      }
+
+
+      var query_list = new Array();
+ 
+      var complexQuery={ 
+        "complex_query":{ 
+           "operator":"AND",
+           query_list
+             },
+        "result_type":"protein_list"
+          };
+        
+     
+
+
+      function cq_complexQuery(query){
+          
+
+          
+          query_list.push(query);
+          console.log(JSON.stringify(complexQuery));
+          
+        
+      }
