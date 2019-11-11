@@ -53,8 +53,8 @@ links.forEach(function(e) {
 
 //setting basic d3 properties
         var force = d3.forceSimulation()
-        .force("charge", d3.forceManyBody().strength(-5))
-        .force("link", d3.forceLink().id(function(d) { return d.id; }).distance(200))
+        //.force("charge", d3.forceManyBody().strength(-5)) 
+        .force("link", d3.forceLink().id(function(d) { return d.id; }).distance(200)) 
         .nodes(nodes);
 
 //appending on the div and rendering the graph on it
